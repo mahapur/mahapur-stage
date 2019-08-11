@@ -25,7 +25,7 @@ function render(helpArr) {
         let div = document.createElement("div");
         div.textContent = getField(element.name)
             + " (" + getField(element.contact) + ") "
-            + getCity(getField(element.city))
+            + getCity(getField(element.city)) + " "
             + getField(element.helpType);
         newCell.appendChild(div);
         let br = document.createElement("br");
@@ -60,7 +60,7 @@ function validateFields() {
         rc = false;
     }
     if (description.value.length < 1){
-        err_str += "वैध वर्णन प्रविष्ट करा\n\n";
+        err_str += "वैध वर्णन प्रविष्ट करा\n";
         rc = false;
     }
 
