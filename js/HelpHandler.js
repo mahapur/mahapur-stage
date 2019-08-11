@@ -24,9 +24,8 @@ function render(helpArr) {
         let element = helpArr[i];
         let div = document.createElement("div");
         div.textContent = getField(element.name)
-            + " (" + getField(element.contact) + ") "
-            + getCity(getField(element.city)) + " "
-            + getField(element.helpType);
+            + " (" + getField(element.contact) + "), "
+            + getCity(getField(element.city));
         newCell.appendChild(div);
         let br = document.createElement("br");
         newCell.appendChild(br);
