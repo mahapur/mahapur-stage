@@ -18,9 +18,12 @@ function render(helpArr) {
     }
 
     function getPhoneLink(value) {
+        if (value == null) {
+            return '-';
+        }
         let element = document.createElement("a");
         element.innerHTML = value;
-        element.setAttribute("href", "tel:" + getField(value.contact));
+        element.setAttribute("href", "tel:" + value);
         return element;
     }
 
@@ -31,11 +34,8 @@ function render(helpArr) {
         let element = helpArr[i];
         let div = document.createElement("div");
         div.innerHTML = getField(element.name) + " " + getCity(getField(element.city));
-        div.appendChild(document.createElement("br"));
         div.appendChild(getPhoneLink(element.contact));
         newCell.appendChild(div);
-        let br = document.createElement("br");
-        newCell.appendChild(br);
         let descriptionDiv = document.createElement("div");
         descriptionDiv.innerHTML = element.description;
         newCell.appendChild(descriptionDiv);
@@ -49,12 +49,12 @@ function getAndRender() {
 }
 
 function validateFields() {
-    var err_str = "";
-    var rc = true;
+    let err_str = "";
+    let rc = true;
 
-    var name = document.getElementById("name");
-    var phone = document.getElementById("phone");
-    var description = document.getElementById("exampleMessage");
+    const name = document.getElementById("name");
+    const phone = document.getElementById("phone");
+    const description = document.getElementById("exampleMessage");
 
     if (name.value.length <= 3) {
         err_str = "वैध नाव प्रविष्ट करा\n";
@@ -77,11 +77,11 @@ function validateFields() {
     return rc;
 }
 function createHelp() {
-    var name = document.getElementById("name");
-    var phone = document.getElementById("phone");
-    var city = document.getElementById("city");
-    var category = document.getElementById("category");
-    var description = document.getElementById("exampleMessage");
+    const name = document.getElementById("name");
+    const phone = document.getElementById("phone");
+    const city = document.getElementById("city");
+    const category = document.getElementById("category");
+    const description = document.getElementById("exampleMessage");
 
     if (!validateFields()) {
         return false;
