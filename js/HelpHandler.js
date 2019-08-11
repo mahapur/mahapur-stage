@@ -25,13 +25,16 @@ function createHelp() {
         name: name.value,
         description: description.value,
         contact: phone.value,
-        city: city.options[city.selectedIndex].innerHTML.toString(),
-        helpType: category.options[category.selectedIndex].innerHTML.toString(),
+        city: city.options[city.selectedIndex].value,
+        helpType: category.options[category.selectedIndex].value,
     };
     createHelpInfo(successCallback, help);
+    return false;
 }
 
 function successCallback(data) {
     console.log("data ", data);
     alert("Help created, Thank you");
+    this.window.location.replace("/mahapur-stage/index.html");
+    return false;
 }
