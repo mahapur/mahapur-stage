@@ -18,9 +18,12 @@ function render(helpArr) {
     }
 
     function getPhoneLink(value) {
+        if (value == null) {
+            return '-';
+        }
         let element = document.createElement("a");
         element.innerHTML = value;
-        element.setAttribute("href", "tel:" + getField(value.contact));
+        element.setAttribute("href", "tel:" + value);
         return element;
     }
 
