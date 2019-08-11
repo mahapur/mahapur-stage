@@ -1,11 +1,35 @@
 function render(helpArr) {
     let tableBody = document.getElementById("table-id");
     tableBody.innerHTML = "";
+
+    function getField(element) {
+        return element != null ? element : '-';
+    }
+
+    function getCity(value) {
+        if (value === '-') {
+            return value;
+        }
+        let map = {
+            sangli: 'सांगली',
+            kolhapur: 'कोल्हापुर',
+        };
+        return map[value];
+    }
+
     for (let i = 0; i < helpArr.length; i++) {
         let newRow = document.createElement("tr");
         tableBody.appendChild(newRow);
         let newCell = document.createElement("td");
-        newCell.textContent = helpArr[i].description;
+        let element = helpArr[i];
+        let div = document.createElement("div");
+        div.textContent = getField(element.name) + " (" + getField(element.contact) + ") " + getCity(getField(element.city));
+        newCell.appendChild(div);
+        let br = document.createElement("br");
+        newCell.appendChild(br);
+        let descriptionDiv = document.createElement("div");
+        descriptionDiv.innerHTML = element.description;
+        newCell.appendChild(descriptionDiv);
         newRow.appendChild(newCell);
     }
     console.log(helpArr)
@@ -28,11 +52,11 @@ function createHelp() {
         city: city.options[city.selectedIndex].value,
         helpType: category.options[category.selectedIndex].value,
     };
-    createHelpInfo(successCallback, help);
+    createHelpInfo(successCallbackForPost, help);
     return false;
 }
 
-function successCallback(data) {
+function successCallbackForPost(data) {
     console.log("data ", data);
     alert("Help created, Thank you");
     this.window.location.replace("/mahapur-stage/index.html");
