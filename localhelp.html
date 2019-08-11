@@ -53,7 +53,7 @@
       </div>
       <div class="six columns">
         <label for="exampleEmailInput">फोन नंबर</label>
-        <input class="u-full-width" type="text" id="phone">
+        <input class="u-full-width" type="number" id="phone" required="required" pattern="[1-9]{1}[0-9]{9}" />
       </div>
       <div class="six columns">
         <label for="exampleRecipientInput">सांगली/कोल्हापूर सिलेक्ट करा</label>
@@ -74,7 +74,7 @@
     </div>
     <label for="exampleMessage">मेसेज (पत्ता समाविष्ट करा)</label>
     <textarea class="u-full-width" id="exampleMessage"></textarea>
-    <input class="button-primary" type="submit" value="पाठवा" onclick="return createHelp();">
+      <button class="button-primary" value="पाठवा" onclick="return createHelp();"> पाठवा </button>
   </form>
   </div>
 </body>

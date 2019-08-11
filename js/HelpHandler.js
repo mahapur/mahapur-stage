@@ -42,12 +42,44 @@ function getAndRender() {
     getHelpInfo(render);
 }
 
+function validateFields() {
+    var err_str = "";
+    var rc = true;
+
+    var name = document.getElementById("name");
+    var phone = document.getElementById("phone");
+    var description = document.getElementById("exampleMessage");
+
+    if (name.value.length <= 3) {
+        err_str = "वैध नाव प्रविष्ट करा\n";
+        rc = false
+    }
+
+    if(phone.value.length !== 10) {
+        err_str += "वैध फोन नंबर प्रविष्ट करा\n";
+        rc = false;
+    }
+    if (description.value.length < 1){
+        err_str += "वैध वर्णन प्रविष्ट करा\n\n";
+        rc = false;
+    }
+
+    if (rc === false) {
+        alert(err_str);
+    }
+
+    return rc;
+}
 function createHelp() {
-    let name = document.getElementById("name");
-    let phone = document.getElementById("phone");
-    let city = document.getElementById("city");
-    let category = document.getElementById("category");
-    let description = document.getElementById("exampleMessage");
+    var name = document.getElementById("name");
+    var phone = document.getElementById("phone");
+    var city = document.getElementById("city");
+    var category = document.getElementById("category");
+    var description = document.getElementById("exampleMessage");
+
+    if (!validateFields()) {
+        return false;
+    }
     let help = {
         name: name.value,
         description: description.value,
@@ -58,6 +90,7 @@ function createHelp() {
     createHelpInfo(successCallbackForPost, help);
     return false;
 }
+
 
 function successCallbackForPost(data) {
     console.log("data ", data);
