@@ -58,7 +58,7 @@ function createHelp() {
 
 function successCallbackForPost(data) {
     console.log("data ", data);
-    alert("धन्यवाद");
+    alert("धन्यवाद!");
     this.document.location.href="/";
     return false;
 }
