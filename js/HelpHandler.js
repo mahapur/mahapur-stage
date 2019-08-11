@@ -11,8 +11,8 @@ function render(helpArr) {
             return value;
         }
         let map = {
-            sangli: ' सांगली  ',
-            kolhapur: ' कोल्हापुर ',
+            sangli: ', सांगली  ',
+            kolhapur: ', कोल्हापुर ',
         };
         return map[value];
     }
