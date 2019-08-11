@@ -40,25 +40,33 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="header">
-      <h4 class="title">सांगली कोल्हापूर आपत्ती सहाय्यता संकेतस्थळ</h4>
-      <a class="button button-primary" href="helpline.html">हेल्पलाइन</a>
-      <br>
-      <a class="button button-primary" href="donations.html">सहाय्यता</a>
+      <h5 class="title">खालील फॉर्म भरून स्थानिकांना सहाय्यता करावी</h5>
     </section>
 
     <div class="navbar-spacer"></div>
 
-    <!-- Tables -->
-    <div class="docs-section" id="tables">
-      <h5>स्थानिक मदत (WhatsApp sharing)</h5>
-      <div class="docs-example">
-        <table id="table-id" class="u-full-width">
-          <tbody>
-          </tbody>
-        </table>
+  <!-- The above form looks like this -->
+  <form>
+    <div class="row">
+      <div class="six columns">
+        <label for="exampleEmailInput">मदत करणाऱ्याचे नाव</label>
+        <input class="u-full-width" type="text" id="name">
+      </div>
+      <div class="six columns">
+        <label for="exampleEmailInput">फोन नंबर</label>
+        <input class="u-full-width" type="text" id="phone">
+      </div>
+      <div class="six columns">
+        <label for="exampleRecipientInput">सांगली अथवा कोल्हापूर</label>
+        <select class="u-full-width" id="exampleRecipientInput">
+          <option value="Option 1">Sangli</option>
+          <option value="Option 2">Kolhapur</option>
+        </select>
       </div>
     </div>
-  </div>
-
+    <label for="exampleMessage">मेसेज</label>
+    <textarea class="u-full-width" id="exampleMessage"></textarea>
+    <input class="button-primary" type="submit" value="पाठवा">
+  </form>
 </body>
 </html>
