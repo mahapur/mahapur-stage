@@ -60,7 +60,7 @@ function validateFields() {
         rc = false;
     }
     if (description.value.length < 1){
-        err_str += "वैध वर्णन प्रविष्ट करा\n\n";
+        err_str += "वैध वर्णन प्रविष्ट करा\n";
         rc = false;
     }
 
