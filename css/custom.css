@@ -1,7 +1,7 @@
 .container {
   max-width: 800px; }
 .header {
-  margin-top: 6rem;
+  margin-top: 2rem;
   text-align: center; }
 .value-prop {
   margin-top: 1rem; }
@@ -15,7 +15,7 @@
   font-weight: 600; }
 .docs-section {
   border-top: 1px solid #eee;
-  padding: 4rem 0;
+  padding: 2rem 0;
   margin-bottom: 0;}
 .value-img {
   display: block;
