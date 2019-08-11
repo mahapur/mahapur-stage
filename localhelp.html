@@ -30,6 +30,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/github-prettify-theme.css">
   <script src="js/Rest.js"></script>
+  <script src="js/HelpHandler.js"></script>
 
 </head>
 <body class="code-snippets-visible" style="font-family: 'Glegoo', serif;">
@@ -44,7 +45,7 @@
     <div class="navbar-spacer"></div>
 
   <!-- The above form looks like this -->
-  <form>
+    <form id="help-form">
     <div class="row">
       <div class="six columns">
         <label for="exampleEmailInput">मदत करणाऱ्याचे नाव</label>
@@ -57,8 +58,8 @@
       <div class="six columns">
         <label for="exampleRecipientInput">सांगली/कोल्हापूर सिलेक्ट करा</label>
         <select class="u-full-width" id="city">
-          <option value="Option 1">Sangli</option>
-          <option value="Option 2">Kolhapur</option>
+          <option value="sangli">Sangli</option>
+          <option value="kolhapur">Kolhapur</option>
         </select>
       </div>
       <div class="six columns">
@@ -73,7 +74,8 @@
     </div>
     <label for="exampleMessage">मेसेज (पत्ता समाविष्ट करा)</label>
     <textarea class="u-full-width" id="exampleMessage"></textarea>
-    <input class="button-primary" type="submit" value="पाठवा">
+    <input class="button-primary" type="submit" value="पाठवा" onclick="return createHelp();">
   </form>
+  </div>
 </body>
 </html>
