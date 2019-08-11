@@ -23,7 +23,10 @@ function render(helpArr) {
         let newCell = document.createElement("td");
         let element = helpArr[i];
         let div = document.createElement("div");
-        div.textContent = getField(element.name) + " (" + getField(element.contact) + ") " + getCity(getField(element.city));
+        div.textContent = getField(element.name)
+            + " (" + getField(element.contact) + ") "
+            + getCity(getField(element.city))
+            + getField(element.helpType);
         newCell.appendChild(div);
         let br = document.createElement("br");
         newCell.appendChild(br);
