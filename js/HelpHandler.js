@@ -11,10 +11,17 @@ function render(helpArr) {
             return value;
         }
         let map = {
-            sangli: 'सांगली',
-            kolhapur: 'कोल्हापुर',
+            sangli: ' सांगली  ',
+            kolhapur: ' कोल्हापुर ',
         };
         return map[value];
+    }
+
+    function getPhoneLink(value) {
+        let element = document.createElement("a");
+        element.innerHTML = value;
+        element.setAttribute("href", "tel:" + getField(value.contact));
+        return element;
     }
 
     for (let i = 0; i < helpArr.length; i++) {
@@ -23,9 +30,9 @@ function render(helpArr) {
         let newCell = document.createElement("td");
         let element = helpArr[i];
         let div = document.createElement("div");
-        div.textContent = getField(element.name)
-            + " (" + getField(element.contact) + "), "
-            + getCity(getField(element.city));
+        div.innerHTML = getField(element.name) + " " + getCity(getField(element.city));
+        div.appendChild(document.createElement("br"));
+        div.appendChild(getPhoneLink(element.contact));
         newCell.appendChild(div);
         let br = document.createElement("br");
         newCell.appendChild(br);
