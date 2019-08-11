@@ -58,7 +58,7 @@ function createHelp() {
 
 function successCallbackForPost(data) {
     console.log("data ", data);
-    alert("Help created, Thank you");
-    this.window.location.replace("/mahapur-stage/index.html");
+    alert("धन्यवाद");
+    this.document.location.href="/";
     return false;
 }
