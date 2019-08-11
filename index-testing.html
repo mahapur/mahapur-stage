@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +32,7 @@
   <link rel="stylesheet" href="css/github-prettify-theme.css">
   <script src="js/Rest.js"></script>
   <script src="js/HelpHandler.js"></script>
+  <script src="js/FilterHandler.js"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145439038-1"></script>
@@ -75,6 +75,30 @@
     <!-- Tables -->
     <div class="docs-section" id="tables">
       <h5><b>उपलब्ध स्थानिक मदत</b></h5>
+      <!-- The above form looks like this -->
+        <form id="help-form" onchange="filter()"">
+        <div class="row">
+          <div class="twelve columns">
+            <select class="six.columns" id="city">
+              <option value="sangli">सांगली</option>
+              <option value="kolhapur">कोल्हापूर</option>
+            </select>
+            <select class="six.columns" id="category">
+              <option value="पाणी">पाणी</option>
+              <option value="औषधे">औषधे</option>
+              <option value="अन्न धान्य (खाद्य पदार्थ)">अन्न धान्य (खाद्य पदार्थ)</option>
+              <option value="कपडे">कपडे</option>
+              <option value="जनावरांसाठी खाद्य">जनावरांसाठी खाद्य</option>
+              <option value="भांडी">भांडी</option>
+              <option value="दैनंदीनी लागणार्या वस्तू">दैनंदीनी लागणार्या वस्तू</option>
+              <option value="सॅनीटरी नॅपकीन्स">सॅनीटरी नॅपकीन्स</option>
+              <option value="डायपर">डायपर</option>
+              <option value="शालेय उपयोगी साहित्य">शालेय उपयोगी साहित्य</option>
+              <option value="इतर">इतर</option>
+            </select>
+          </div>
+        </div>
+      </form>
       <div class="docs-example">
         <table id="table-id" class="u-full-width">
           <tbody>
