@@ -34,11 +34,8 @@ function render(helpArr) {
         let element = helpArr[i];
         let div = document.createElement("div");
         div.innerHTML = getField(element.name) + " " + getCity(getField(element.city));
-        div.appendChild(document.createElement("br"));
         div.appendChild(getPhoneLink(element.contact));
         newCell.appendChild(div);
-        let br = document.createElement("br");
-        newCell.appendChild(br);
         let descriptionDiv = document.createElement("div");
         descriptionDiv.innerHTML = element.description;
         newCell.appendChild(descriptionDiv);
