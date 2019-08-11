@@ -26,5 +26,3 @@ function render(helpArr) {
     }
     console.log(helpArr)
 }
-
-getHelpInfo(render);
