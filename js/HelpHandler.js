@@ -33,9 +33,13 @@ function render(helpArr) {
         let newCell = document.createElement("td");
         let element = helpArr[i];
         let div = document.createElement("div");
-        div.innerHTML = getField(element.name) + " " + getCity(getField(element.city));
-        div.appendChild(getPhoneLink(element.contact));
+        // div.style.fontWeight = 'bold';
+        div.innerHTML = getField(element.name) + getCity(getField(element.city));
         newCell.appendChild(div);
+        let phoneCell = document.createElement("div");
+        phoneCell.innerHTML = "फोन - ";
+        phoneCell.appendChild(getPhoneLink(element.contact));
+        newCell.appendChild(phoneCell);
         let descriptionDiv = document.createElement("div");
         descriptionDiv.innerHTML = element.description;
         newCell.appendChild(descriptionDiv);
