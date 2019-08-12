@@ -36,7 +36,8 @@ function render(helpArr) {
         let element = helpArr[i];
         let div = document.createElement("div");
         // div.style.fontWeight = 'bold';
-        div.innerHTML = getField(element.name) + getCity(getField(element.city));
+        // div.innerHTML = getField(element.name) + getCity(getField(element.city));
+        div.innerHTML = getField(element.name) + " (" + getField(element.helpType) + ")";
         newCell.appendChild(div);
         let phoneCell = document.createElement("div");
         phoneCell.innerHTML = "फोन - ";
