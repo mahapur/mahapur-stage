@@ -1,3 +1,5 @@
+let helpData;
+
 function render(helpArr) {
     let tableBody = document.getElementById("table-id");
     tableBody.innerHTML = "";
@@ -45,11 +47,23 @@ function render(helpArr) {
         newCell.appendChild(descriptionDiv);
         newRow.appendChild(newCell);
     }
-    console.log(helpArr)
 }
 
 function getAndRender() {
-    getHelpInfo(render);
+    getHelpInfo((data) => {
+        this.helpData = data;
+        render(data);
+    });
+}
+
+function renderWithFilter() {
+    const city = document.getElementById("city").value;
+    const category = document.getElementById("category").value;
+    let helpList = this.helpData;
+    const finalList = helpList.filter(help => {
+        return (city === '-' || help.city === city) && (category === '-' || help.helpType === category);
+    });
+    render(finalList);
 }
 
 function validateFields() {
