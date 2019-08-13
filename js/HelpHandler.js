@@ -19,14 +19,14 @@ function render(helpArr) {
         return map[value];
     }
 
-    function getPhoneLink(value) {
-        if (value == null) {
+    function getPhoneLink(phone, name, helpType) {
+        if (phone == null) {
             return '-';
         }
         let element = document.createElement("a");
-        element.innerHTML = value;
-        element.setAttribute("href", "tel:" + value);
-        element.setAttribute("onclick", "ga('send', 'event', 'usage', 'phone number clicked', " + value + ");")
+        element.innerHTML = phone;
+        element.setAttribute("href", "tel:" + phone);
+        element.setAttribute("onclick", "ga('send', 'event', 'usage', 'phone number clicked', '" + helpType + " | " + name + " | " + phone + "');")
         return element;
     }
 
@@ -42,7 +42,7 @@ function render(helpArr) {
         newCell.appendChild(div);
         let phoneCell = document.createElement("div");
         phoneCell.innerHTML = "फोन - ";
-        phoneCell.appendChild(getPhoneLink(element.contact));
+        phoneCell.appendChild(getPhoneLink(element.contact, element.name, element.helpType));
         newCell.appendChild(phoneCell);
         let descriptionDiv = document.createElement("div");
         descriptionDiv.innerHTML = element.description;
