@@ -32,7 +32,6 @@
   <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/github-prettify-theme.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
   <script src="js/Rest.js"></script>
   <script src="js/HelpHandler.js"></script>
 
@@ -45,13 +44,6 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-145465285-1');
-  </script>
-  <script>
-    function blinker() {
-    	$('.blinking').fadeOut(500);
-  	  $('.blinking').fadeIn(500);
-    }
-    setInterval(blinker, 1000);
   </script>
 </head>
 <body class="code-snippets-visible" onload="return getAndRender();">
@@ -85,8 +77,6 @@
     <!-- Tables -->
 
     <div class="docs-section" id="tables">
-      <h5><a class="blinking" style="color:red;font:bold" href="https://docs.google.com/forms/d/e/1FAIpQLSc4OGr5mQrDTmEA7vC12jjuYEJ-Ymty-bBBmIhcuSeAd_i-JQ/viewform">महत्वाचे: महापूरग्रस्त संघर्ष समिती, कोल्हापूर.<a></h5>
-      <hr/>
       <h5><b>उपलब्ध स्थानिक मदत</b></h5>
       <!-- The above form looks like this -->
         <form id="help-form" onchange="return renderWithFilter();">
