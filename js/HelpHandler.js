@@ -26,6 +26,7 @@ function render(helpArr) {
         let element = document.createElement("a");
         element.innerHTML = value;
         element.setAttribute("href", "tel:" + value);
+        element.setAttribute("onclick", "ga('send', 'event', 'usage', 'phone number clicked', value);")
         return element;
     }
 
